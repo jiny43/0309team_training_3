@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function elementMaker(tagName,props,...children){
+        const element = Document.createElement(tagName);
+        Object.keys(props).forEach(function(key){
+            element[key] = props[key]; 
+        
+        });
+    if(children.length > 0) {
+        cildren.forEach(function(child) {
+            if(typeof(child) === "string"){             
+                child = document.createTextNode(child);
+            }
+            element.appendChild(child);
+        });
+    };
+    return element;
+    console.dir(elementMaker('div','style','하이','div'));
+    };
+
+
+
+    
+</script>
